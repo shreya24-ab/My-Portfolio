@@ -1,505 +1,73 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+/* Make existing page containers fit the portfolio design */
+
+.home-page,
+.about-page,
+.projects-page,
+.contact-page {
+  width: 100%;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f8ffff;
-  color: #263238;
+/* Featured projects on Home */
+.featured-section {
+  padding-top: 60px;
+  padding-bottom: 70px;
 }
 
-a {
-  text-decoration: none;
+.featured-section > div {
+  max-width: 1050px;
+  margin: 0 auto;
 }
 
-.app {
-  min-height: 100vh;
-  transition: 0.3s;
+/* Projects page */
+.projects-page {
+  padding-top: 55px;
+  padding-bottom: 70px;
 }
 
-
-/* NAVIGATION */
-
-header {
-  background: linear-gradient(90deg, #008c95, #e83e8c);
-  color: white;
-  padding: 18px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.18);
-}
-
-header h1 {
-  font-size: 27px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: white;
-  margin-left: 20px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #ffe082;
-}
-
-.dark-button {
-  margin-left: 18px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-
-/* HOME */
-
-.home {
-  min-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.projects-header h1 {
+  color: var(--primary);
   text-align: center;
-  padding: 50px 20px;
-
-  background: linear-gradient(
-    135deg,
-    #00a6a6,
-    #38d9c5,
-    #e83e8c
-  );
-
-  color: white;
-}
-
-.home-content {
-  animation: fadeIn 1.2s ease;
-}
-
-.profile-circle {
-  width: 145px;
-  height: 145px;
-  margin: auto;
-  margin-bottom: 25px;
-  border-radius: 50%;
-  background: white;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 60px;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-.home h2 {
-  font-size: 50px;
-  margin-bottom: 12px;
-}
-
-.home h3 {
-  font-size: 22px;
-  color: #fff3b0;
-  margin-bottom: 15px;
-}
-
-.home p {
-  font-size: 18px;
+  font-size: 34px;
   margin-bottom: 25px;
 }
 
-.home-button {
-  display: inline-block;
-  padding: 13px 28px;
+/* Contact page */
+.contact-page {
+  padding-top: 0;
+  padding-bottom: 60px;
+}
+
+.contact-page .contact-section {
   background: white;
-  color: #008c95;
-  border-radius: 30px;
-  font-weight: bold;
 }
 
-.home-button:hover {
-  background: #ffe082;
-}
-
-
-/* COMMON */
-
-section {
-  padding: 80px 10%;
-}
-
-.section-title {
+.contact-page h1 {
+  color: var(--primary);
   text-align: center;
-  font-size: 35px;
-  margin-bottom: 45px;
-  color: #008c95;
-}
-
-.section-title span {
-  color: #e83e8c;
-}
-
-
-/* ABOUT */
-
-.about-box {
-  max-width: 850px;
-  margin: auto;
-  padding: 38px;
-  border-radius: 20px;
-
-  background: linear-gradient(
-    135deg,
-    #e0ffff,
-    #ffe5f0
-  );
-
-  border-left: 6px solid #e83e8c;
-
-  box-shadow: 0 10px 25px rgba(0, 100, 100, 0.12);
-
-  text-align: center;
-}
-
-.about-box p {
-  line-height: 1.8;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-
-/* ALTERNATE SECTIONS */
-
-.alternate {
-  background: #eefdfc;
-}
-
-
-/* SKILLS + PROJECTS */
-
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-.skill-card {
-  width: 190px;
-  padding: 30px 20px;
-  background: white;
-  border-radius: 18px;
-  text-align: center;
-  border-top: 4px solid #008c95;
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-
-  transition: 0.3s;
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  border-top-color: #e83e8c;
-}
-
-.icon {
-  font-size: 40px;
+  font-size: 34px;
   margin-bottom: 15px;
 }
 
-.skill-card h3 {
-  color: #008c95;
-  margin-bottom: 10px;
-}
-
-.skill-card p {
-  color: #666;
-  font-size: 14px;
-}
-
-
-/* EDUCATION */
-
-#education {
-  background: white;
+.contact-page > .contact-section > p {
   text-align: center;
+  color: var(--muted);
+  margin-bottom: 30px;
 }
 
-.education-card {
-  max-width: 700px;
-  margin: auto;
-  padding: 38px;
-  border-radius: 20px;
-
-  background: linear-gradient(
-    135deg,
-    #d9ffff,
-    #ffd9e8
-  );
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.education-card h3 {
-  color: #008c95;
-  margin-bottom: 15px;
-  font-size: 23px;
-}
-
-.education-card p {
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-
-/* PROJECTS */
-
-.project-card {
-  width: 320px;
-  padding: 35px;
-  background: white;
-  border-radius: 20px;
-  text-align: center;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-
-  transition: 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-}
-
-.project-icon {
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-
-.project-card h3 {
-  color: #e83e8c;
-  margin-bottom: 15px;
-}
-
-.project-card p {
-  line-height: 1.6;
-}
-
-
-/* GITHUB */
-
-.github-section {
-  margin-top: 50px;
-  text-align: center;
-  padding: 32px;
-  background: white;
-  border-radius: 20px;
-  border: 2px solid #b8eeee;
-}
-
-.github-section h3 {
-  color: #008c95;
-  font-size: 23px;
-  margin-bottom: 10px;
-}
-
-.github-section p {
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.github-button {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #263238;
-  color: white;
-  border-radius: 25px;
-  font-weight: bold;
-}
-
-.github-button:hover {
-  background: #e83e8c;
-}
-
-
-/* CONTACT */
-
-.contact {
-  background: linear-gradient(
-    135deg,
-    #008c95,
-    #e83e8c
-  );
-
-  color: white;
-  text-align: center;
-}
-
-.contact .section-title {
-  color: white;
-}
-
-.contact-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-.contact-card {
-  width: 250px;
-  padding: 25px;
-
-  background: rgba(255, 255, 255, 0.15);
-
-  border: 1px solid rgba(255, 255, 255, 0.3);
-
-  border-radius: 15px;
-
-  backdrop-filter: blur(10px);
-
-  transition: 0.3s;
-}
-
-.contact-card:hover {
-  transform: scale(1.05);
-}
-
-.contact-card h3 {
-  margin-bottom: 10px;
-}
-
-.email-button {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 8px 18px;
-
-  background: white;
-  color: #008c95;
-
-  border-radius: 20px;
-  font-weight: bold;
-}
-
-
-/* FOOTER */
-
-footer {
-  background: #17252a;
-  color: white;
-  text-align: center;
-  padding: 25px;
-}
-
-
-/* BACK TO TOP */
-
-.top-button {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-
-  width: 45px;
-  height: 45px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: #e83e8c;
-  color: white;
-
-  font-size: 20px;
-  cursor: pointer;
-}
-
-
-/* DARK MODE */
-
-.dark {
-  background: #162225;
-  color: #eeeeee;
-}
-
-.dark .alternate,
-.dark #education {
-  background: #162225;
-}
-
-.dark .skill-card,
-.dark .project-card,
-.dark .github-section,
-.dark .education-card,
-.dark .about-box {
-  background: #263a3e;
-  color: white;
-}
-
-.dark .skill-card p,
-.dark .github-section p {
-  color: #cccccc;
-}
-
-
-/* ANIMATION */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* Mobile */
+@media (max-width: 768px) {
+  .featured-section {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  header {
-    flex-direction: column;
-    gap: 15px;
+  .projects-page {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  nav {
-    justify-content: center;
-  }
-
-  nav a {
-    margin: 5px;
-    font-size: 14px;
-  }
-
-  .home h2 {
-    font-size: 35px;
-  }
-
-  .home h3 {
-    font-size: 19px;
-  }
-
-  .project-card {
-    width: 100%;
-  }
-
-  .skill-card {
-    width: 150px;
+  .contact-page {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
