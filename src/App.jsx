@@ -41,7 +41,6 @@ function App() {
         <button className="menu-btn">☰</button>
       </nav>
 
-
       {/* HERO */}
       <section className="hero" id="home">
 
@@ -72,7 +71,6 @@ function App() {
 
       </section>
 
-
       {/* ABOUT */}
       <section className="about" id="about">
 
@@ -102,78 +100,45 @@ function App() {
 
       </section>
 
-
       {/* PROJECTS */}
       <section className="projects" id="projects">
 
         <p className="section-small">MY WORK</p>
 
-        <h2>Featured Projects</h2>
+        <h2>Featured Project</h2>
 
         <p className="project-intro">
-          A few projects I've built while learning and exploring
+          A project I've built while learning and exploring
           modern web development.
         </p>
 
         <div className="project-grid">
 
+          {/* ONLY PORTFOLIO PROJECT */}
           <div className="project-card">
+
             <h3>Portfolio Website</h3>
 
             <p>
-              Personal developer portfolio showcasing my skills,
-              projects and experience.
+              A personal developer portfolio website showcasing
+              my skills, education, projects and experience.
             </p>
 
             <div className="tags">
-              <span>React</span>
+              <span>HTML</span>
               <span>CSS</span>
               <span>JavaScript</span>
             </div>
 
-            <button>View Project ↗</button>
-          </div>
+            <a href="#home" className="btn primary">
+              View Portfolio ↗
+            </a>
 
-
-          <div className="project-card">
-            <h3>BookMyShow Clone</h3>
-
-            <p>
-              A movie ticket booking website created while learning
-              full-stack web development.
-            </p>
-
-            <div className="tags">
-              <span>React</span>
-              <span>JavaScript</span>
-              <span>CSS</span>
-            </div>
-
-            <button>View Project ↗</button>
-          </div>
-
-
-          <div className="project-card">
-            <h3>React + Spring Boot App</h3>
-
-            <p>
-              A full-stack application built using React and
-              Spring Boot with REST APIs.
-            </p>
-
-            <div className="tags">
-              <span>React</span>
-              <span>Spring Boot</span>
-              <span>REST API</span>
-            </div>
-
-            <button>View Project ↗</button>
           </div>
 
         </div>
 
       </section>
-
 
       {/* CONTACT */}
       <section className="contact" id="contact">
@@ -195,7 +160,6 @@ function App() {
         </a>
 
       </section>
-
 
       {/* FOOTER */}
       <footer>
