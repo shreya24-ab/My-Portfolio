@@ -1,102 +1,208 @@
-// src/App.jsx
+import { useState, useEffect } from "react";
+import "./index.css";
 
-import { useEffect, useState } from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
+function getGreeting() {
+  const hour = new Date().getHours();
 
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+  if (hour < 12) {
+    return "Good Morning";
+  } else if (hour < 17) {
+    return "Good Afternoon";
+  } else {
+    return "Good Evening";
+  }
+}
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [greeting, setGreeting] = useState(getGreeting());
 
-  // Load saved theme
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
+    const timer = setInterval(() => {
+      setGreeting(getGreeting());
+    }, 60000);
 
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
+    return () => clearInterval(timer);
   }, []);
 
-  // Apply theme
-  useEffect(() => {
-    document.body.dataset.theme = theme;
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  // Toggle dark/light mode
-  const toggleTheme = () => {
-    setTheme((currentTheme) =>
-      currentTheme === "dark" ? "light" : "dark"
-    );
-  };
-
   return (
-    <BrowserRouter>
+    <div className="app">
 
-      <div className="app-shell">
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <div className="logo">SB</div>
 
-        {/* NAVBAR */}
-        <Navbar
-          theme={theme}
-          toggleTheme={toggleTheme}
-        />
+        <div className="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
 
-        {/* MAIN CONTENT */}
-        <main className="page-content">
+        <button className="menu-btn">☰</button>
+      </nav>
 
-          <Routes>
 
-            {/* HOME */}
-            <Route
-              path="/"
-              element={<Home />}
-            />
+      {/* HERO */}
+      <section className="hero" id="home">
 
-            {/* ABOUT */}
-            <Route
-              path="/about"
-              element={<About />}
-            />
+        <p className="greeting">
+          {greeting} 👋
+        </p>
 
-            {/* PROJECTS */}
-            <Route
-              path="/projects"
-              element={<Projects />}
-            />
+        <h1>
+          I'm <span>Shreya</span>
+        </h1>
 
-            {/* CONTACT */}
-            <Route
-              path="/contact"
-              element={<Contact />}
-            />
+        <h2>B.Tech Computer Science Student</h2>
 
-            {/* INVALID PAGE */}
-            <Route
-              path="*"
-              element={<NotFound />}
-            />
+        <p className="hero-text">
+          I'm passionate about coding, problem-solving and creating
+          modern, user-friendly web experiences.
+        </p>
 
-          </Routes>
+        <div className="hero-buttons">
+          <a href="#projects" className="btn primary">
+            View My Work ↗
+          </a>
 
-        </main>
+          <a href="#contact" className="btn secondary">
+            Contact Me
+          </a>
+        </div>
 
-        {/* FOOTER */}
-        <Footer />
+      </section>
 
-      </div>
 
-    </BrowserRouter>
+      {/* ABOUT */}
+      <section className="about" id="about">
+
+        <div className="photo-container">
+          <img src="/Photo.jpeg" alt="Shreya" />
+        </div>
+
+        <div className="about-content">
+
+          <p className="section-small">GET TO KNOW ME</p>
+
+          <h2>About Me</h2>
+
+          <p>
+            Hi! I'm <strong>Shreya</strong>, a B.Tech Computer Science
+            Engineering student and aspiring software developer based
+            in India. I enjoy learning new technologies, solving
+            problems and building useful web applications.
+          </p>
+
+          <div className="education">
+            <h3>🎓 Education</h3>
+            <p>B.Tech Computer Science Engineering</p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* PROJECTS */}
+      <section className="projects" id="projects">
+
+        <p className="section-small">MY WORK</p>
+
+        <h2>Featured Projects</h2>
+
+        <p className="project-intro">
+          A few projects I've built while learning and exploring
+          modern web development.
+        </p>
+
+        <div className="project-grid">
+
+          <div className="project-card">
+            <h3>Portfolio Website</h3>
+
+            <p>
+              Personal developer portfolio showcasing my skills,
+              projects and experience.
+            </p>
+
+            <div className="tags">
+              <span>React</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+
+            <button>View Project ↗</button>
+          </div>
+
+
+          <div className="project-card">
+            <h3>BookMyShow Clone</h3>
+
+            <p>
+              A movie ticket booking website created while learning
+              full-stack web development.
+            </p>
+
+            <div className="tags">
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>CSS</span>
+            </div>
+
+            <button>View Project ↗</button>
+          </div>
+
+
+          <div className="project-card">
+            <h3>React + Spring Boot App</h3>
+
+            <p>
+              A full-stack application built using React and
+              Spring Boot with REST APIs.
+            </p>
+
+            <div className="tags">
+              <span>React</span>
+              <span>Spring Boot</span>
+              <span>REST API</span>
+            </div>
+
+            <button>View Project ↗</button>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* CONTACT */}
+      <section className="contact" id="contact">
+
+        <p className="section-small">GET IN TOUCH</p>
+
+        <h2>Contact Me</h2>
+
+        <p>
+          I'm always interested in learning, building and
+          connecting with new people.
+        </p>
+
+        <a
+          href="mailto:yourmail@gmail.com"
+          className="btn primary"
+        >
+          Email Me
+        </a>
+
+      </section>
+
+
+      {/* FOOTER */}
+      <footer>
+        <p>© 2026 Shreya. All rights reserved.</p>
+      </footer>
+
+    </div>
   );
 }
 
