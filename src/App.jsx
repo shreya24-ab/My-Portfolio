@@ -105,16 +105,17 @@ function App() {
 
         <p className="section-small">MY WORK</p>
 
-        <h2>Featured Project</h2>
+        <h2>Featured Projects</h2>
 
-        <p className="project-intro">
-          A project I've built while learning and exploring
-          modern web development.
-        </p>
+
+          <p className="project-intro">
+  Here are some of my projects and internship work that showcase
+  my learning, skills and development journey.
+</p>
+        
 
         <div className="project-grid">
 
-          {/* ONLY PORTFOLIO PROJECT */}
           <div className="project-card">
 
             <h3>Portfolio Website</h3>
@@ -135,6 +136,27 @@ function App() {
             </a>
 
           </div>
+
+        </div>
+
+        {/* GITHUB */}
+        <div className="github-section">
+
+          <h3>🚀 Explore My GitHub Work</h3>
+
+          <p>
+            Explore my internship projects, practice work,
+            assignments and coding activities.
+          </p>
+
+          <a
+            href="https://github.com/shreya24-ab/SW_CSE_B2.2_Internship"
+            target="_blank"
+            rel="noreferrer"
+            className="github-button"
+          >
+            🔗 Explore My GitHub
+          </a>
 
         </div>
 
